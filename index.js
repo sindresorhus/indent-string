@@ -8,5 +8,5 @@ module.exports = function (str, indent, count) {
 
 	indent = count > 1 ? repeatString(indent, count) : indent;
 
-	return str.replace(/(?:^|\r\n|\n)(?=[^\s$])/g, '$&' + indent);
+	return str.replace(/(?:^|\r?\n)(?=[\S$])/g, '$&' + indent);
 };
