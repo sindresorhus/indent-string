@@ -3,7 +3,7 @@
 var stdin = require('get-stdin');
 var argv = require('minimist')(process.argv.slice(2));
 var pkg = require('./package.json');
-var indentString = require('.');
+var indentString = require('./index');
 var input = argv._;
 
 function help() {
