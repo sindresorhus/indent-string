@@ -6,7 +6,7 @@ module.exports = function (str, indent, count) {
 		throw new TypeError('`string` and `indent` should be strings');
 	}
 
-	indent = count > 0 ? repeatString(indent, count) : indent;
+	indent = count > 1 ? repeatString(indent, count) : indent;
 
 	return str.replace(/(?:^|\r\n|\n)(?=[^\s$])/g, '$&' + indent);
 };
