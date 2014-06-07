@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var indentString = require('.');
+var indentString = require('./');
 
 it('should indent each line in a string', function () {
 	assert.strictEqual(indentString('foo\nbar', ' '), ' foo\n bar');
