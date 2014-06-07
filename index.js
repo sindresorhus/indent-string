@@ -6,6 +6,10 @@ module.exports = function (str, indent, count) {
 		throw new TypeError('`string` and `indent` should be strings');
 	}
 
+	if (count != null && typeof count !== 'number') {
+		throw new TypeError('`count` should be a number');
+	}
+
 	indent = count > 1 ? repeatString(indent, count) : indent;
 
 	return str.replace(/(?:^|\r?\n)(?=[\S$])/g, '$&' + indent);
