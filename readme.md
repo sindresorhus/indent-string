@@ -67,6 +67,11 @@ Example
 ```
 
 
+## Related
+
+- [strip-indent](https://github.com/sindresorhus/strip-indent) - Strip leading whitespace from every line in a string
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com)
