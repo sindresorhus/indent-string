@@ -8,16 +8,17 @@ var input = argv._;
 
 function help() {
 	console.log([
-		pkg.description,
 		'',
-		'Usage',
-		'  $ indent-string <string> [--indent <string>] [--count <number>]',
-		'  $ cat file.txt | indent-string > indented-file.txt',
+		'  ' + pkg.description,
 		'',
-		'Example',
-		'  $ indent-string "$(printf \'Unicorns\\nRainbows\\n\')" --indent ♥ --count 4',
-		'  ♥♥♥♥Unicorns',
-		'  ♥♥♥♥Rainbows'
+		'  Usage',
+		'    indent-string <string> [--indent <string>] [--count <number>]',
+		'    cat file.txt | indent-string > indented-file.txt',
+		'',
+		'  Example',
+		'    indent-string "$(printf \'Unicorns\\nRainbows\\n\')" --indent ♥ --count 4',
+		'    ♥♥♥♥Unicorns',
+		'    ♥♥♥♥Rainbows'
 	].join('\n'));
 }
 

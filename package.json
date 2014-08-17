@@ -4,13 +4,13 @@
   "description": "Indent each line in a string",
   "license": "MIT",
   "repository": "sindresorhus/indent-string",
-  "bin": {
-    "indent-string": "cli.js"
-  },
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
+  },
+  "bin": {
+    "indent-string": "cli.js"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -32,8 +32,8 @@
     "line"
   ],
   "dependencies": {
-    "get-stdin": "^0.1.0",
-    "minimist": "^0.1.0",
+    "get-stdin": "^3.0.0",
+    "minimist": "^1.1.0",
     "repeat-string": "^0.1.2"
   },
   "devDependencies": {

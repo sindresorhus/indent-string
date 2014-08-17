@@ -56,14 +56,14 @@ $ npm install --global indent-string
 ```sh
 $ indent-string --help
 
-Usage
-  $ indent-string <string> [--indent <string>] [--count <number>]
-  $ cat file.txt | indent-string > indented-file.txt
+  Usage
+    indent-string <string> [--indent <string>] [--count <number>]
+    cat file.txt | indent-string > indented-file.txt
 
-Example
-  $ indent-string "$(printf 'Unicorns\nRainbows\n')" --indent ♥ --count 4
-  ♥♥♥♥Unicorns
-  ♥♥♥♥Rainbows
+  Example
+    indent-string "$(printf 'Unicorns\nRainbows\n')" --indent ♥ --count 4
+    ♥♥♥♥Unicorns
+    ♥♥♥♥Rainbows
 ```
 
 
