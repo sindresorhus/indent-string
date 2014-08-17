@@ -1,6 +1,6 @@
 {
   "name": "indent-string",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Indent each line in a string",
   "license": "MIT",
   "repository": "sindresorhus/indent-string",
