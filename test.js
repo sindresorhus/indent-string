@@ -11,3 +11,7 @@ it('should indent each line in a string', function () {
 it('should not indent whitespace only lines', function () {
 	assert.strictEqual(indentString('foo\nbar\n', ' '), ' foo\n bar\n');
 });
+
+it('should indent with leading whitespace', function () {
+	assert.strictEqual(indentString(' foo\n bar\n', ' '), '  foo\n  bar\n');
+});
