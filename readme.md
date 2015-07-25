@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save indent-string
 ```
 
@@ -47,28 +47,9 @@ Default: `1`
 How many times you want `indent` repeated.
 
 
-## CLI
-
-```sh
-$ npm install --global indent-string
-```
-
-```sh
-$ indent-string --help
-
-  Usage
-    indent-string <string> [--indent <string>] [--count <number>]
-    cat file.txt | indent-string > indented-file.txt
-
-  Example
-    indent-string "$(printf 'Unicorns\nRainbows\n')" --indent ♥ --count 4
-    ♥♥♥♥Unicorns
-    ♥♥♥♥Rainbows
-```
-
-
 ## Related
 
+- [indent-string-cli](https://github.com/sindresorhus/indent-string-cli) - CLI for this module
 - [strip-indent](https://github.com/sindresorhus/strip-indent) - Strip leading whitespace from every line in a string
 
 

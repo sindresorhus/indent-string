@@ -9,7 +9,6 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "bin": "cli.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -17,22 +16,18 @@
     "test": "mocha"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "index.js"
   ],
   "keywords": [
-    "cli-app",
-    "cli",
-    "bin",
     "indent",
     "string",
     "str",
     "pad",
-    "line"
+    "align",
+    "line",
+    "text"
   ],
   "dependencies": {
-    "get-stdin": "^4.0.1",
-    "minimist": "^1.1.0",
     "repeating": "^1.1.0"
   },
   "devDependencies": {
