@@ -13,28 +13,26 @@ $ npm install --save indent-string
 ## Usage
 
 ```js
-var indentString = require('indent-string');
+const indentString = require('indent-string');
 
 indentString('Unicorns\nRainbows', '♥', 4);
-//=> ♥♥♥♥Unicorns
-//=> ♥♥♥♥Rainbows
+//=> '♥♥♥♥Unicorns'
+//=> '♥♥♥♥Rainbows'
 ```
 
 
 ## API
 
-### indentString(string, indent, count)
+### indentString(string, indent, [count])
 
 #### string
 
-**Required**  
 Type: `string`
 
 The string you want to indent.
 
 #### indent
 
-**Required**  
 Type: `string`
 
 The string to use for the indent.
