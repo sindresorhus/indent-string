@@ -39,7 +39,7 @@ The string to use for the indent.
 
 #### count
 
-Type: `number`  
+Type: `number`<br>
 Default: `1`
 
 How many times you want `indent` repeated.
@@ -53,4 +53,4 @@ How many times you want `indent` repeated.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
