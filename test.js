@@ -1,21 +1,20 @@
-'use strict';
-var assert = require('assert');
-var fn = require('./');
+import test from 'ava';
+import m from './';
 
-it('should indent each line in a string', function () {
-	assert.strictEqual(fn('foo\nbar', ' '), ' foo\n bar');
-	assert.strictEqual(fn('foo\r\nbar', ' '), ' foo\r\n bar');
-	assert.strictEqual(fn('foo\nbar', ' ', 4), '    foo\n    bar');
+test('indent each line in a string', t => {
+	t.is(m('foo\nbar', ' '), ' foo\n bar');
+	t.is(m('foo\r\nbar', ' '), ' foo\r\n bar');
+	t.is(m('foo\nbar', ' ', 4), '    foo\n    bar');
 });
 
-it('should not indent whitespace only lines', function () {
-	assert.strictEqual(fn('foo\nbar\n', ' '), ' foo\n bar\n');
+test('not indent whitespace only lines', t => {
+	t.is(m('foo\nbar\n', ' '), ' foo\n bar\n');
 });
 
-it('should indent with leading whitespace', function () {
-	assert.strictEqual(fn(' foo\n bar\n', ' '), '  foo\n  bar\n');
+test('indent with leading whitespace', t => {
+	t.is(m(' foo\n bar\n', ' '), '  foo\n  bar\n');
 });
 
-it('should not indent when count is 0', function () {
-	assert.strictEqual(fn('foo\nbar\n', ' ', 0), 'foo\nbar\n');
+test('not indent when count is 0', t => {
+	t.is(m('foo\nbar\n', ' ', 0), 'foo\nbar\n');
 });

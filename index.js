@@ -6,7 +6,7 @@ module.exports = function (str, indent, count) {
 		throw new TypeError('`string` and `indent` should be strings');
 	}
 
-	if (count != null && typeof count !== 'number') {
+	if (count !== undefined && typeof count !== 'number') {
 		throw new TypeError('`count` should be a number');
 	}
 
