@@ -1,20 +1,27 @@
 'use strict';
-var repeating = require('repeating');
+const repeating = require('repeating');
 
-module.exports = function (str, indent, count) {
-	if (typeof str !== 'string' || typeof indent !== 'string') {
-		throw new TypeError('`string` and `indent` should be strings');
+module.exports = (str, count, indent) => {
+	indent = indent === undefined ? ' ' : indent;
+	count = count === undefined ? 1 : count;
+
+	if (typeof str !== 'string') {
+		throw new TypeError(`Expected \`input\` to be a \`string\`, got \`${typeof str}\``);
 	}
 
-	if (count !== undefined && typeof count !== 'number') {
-		throw new TypeError('`count` should be a number');
+	if (typeof count !== 'number') {
+		throw new TypeError(`Expected \`count\` to be a \`number\`, got \`${typeof count}\``);
+	}
+
+	if (typeof indent !== 'string') {
+		throw new TypeError(`Expected \`indent\` to be a \`string\`, got \`${typeof indent}\``);
 	}
 
 	if (count === 0) {
 		return str;
 	}
 
-	indent = count > 1 ? repeating(indent, count) : indent;
+	indent = count > 1 ? repeating(count, indent) : indent;
 
 	return str.replace(/^(?!\s*$)/mg, indent);
 };

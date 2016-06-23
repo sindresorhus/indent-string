@@ -15,7 +15,11 @@ $ npm install --save indent-string
 ```js
 const indentString = require('indent-string');
 
-indentString('Unicorns\nRainbows', '♥', 4);
+indentString('Unicorns\nRainbows', 4);
+//=> '    Unicorns'
+//=> '    Rainbows'
+
+indentString('Unicorns\nRainbows', 4, '♥');
 //=> '♥♥♥♥Unicorns'
 //=> '♥♥♥♥Rainbows'
 ```
@@ -23,19 +27,13 @@ indentString('Unicorns\nRainbows', '♥', 4);
 
 ## API
 
-### indentString(string, indent, [count])
+### indentString(input, [count], [indent])
 
-#### string
-
-Type: `string`
-
-The string you want to indent.
-
-#### indent
+#### input
 
 Type: `string`
 
-The string to use for the indent.
+String you want to indent.
 
 #### count
 
@@ -43,6 +41,13 @@ Type: `number`<br>
 Default: `1`
 
 How many times you want `indent` repeated.
+
+#### indent
+
+Type: `string`<br>
+Default: `' '`
+
+String to use for the indent.
 
 
 ## Related
