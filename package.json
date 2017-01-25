@@ -27,14 +27,8 @@
     "line",
     "text"
   ],
-  "dependencies": {
-    "repeating": "^3.0.0"
-  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true
   }
 }

@@ -1,6 +1,4 @@
 'use strict';
-const repeating = require('repeating');
-
 module.exports = (str, count, indent) => {
 	indent = indent === undefined ? ' ' : indent;
 	count = count === undefined ? 1 : count;
@@ -21,7 +19,5 @@ module.exports = (str, count, indent) => {
 		return str;
 	}
 
-	indent = count > 1 ? repeating(count, indent) : indent;
-
-	return str.replace(/^(?!\s*$)/mg, indent);
+	return str.replace(/^(?!\s*$)/mg, indent.repeat(count));
 };
