@@ -19,7 +19,7 @@ indentString('Unicorns\nRainbows', 4);
 //=> '    Unicorns'
 //=> '    Rainbows'
 
-indentString('Unicorns\nRainbows', 4, '♥');
+indentString('Unicorns\nRainbows', 4, {indent: '♥'});
 //=> '♥♥♥♥Unicorns'
 //=> '♥♥♥♥Rainbows'
 ```
@@ -27,7 +27,7 @@ indentString('Unicorns\nRainbows', 4, '♥');
 
 ## API
 
-### indentString(input, [count], [indent])
+### indentString(input, [count], [options])
 
 #### input
 
@@ -42,12 +42,23 @@ Default: `1`
 
 How many times you want `indent` repeated.
 
-#### indent
+#### options
+
+Type: `Object`<br>
+
+##### indent
 
 Type: `string`<br>
 Default: `' '`
 
 String to use for the indent.
+
+##### blank
+
+Type: `boolean`<br>
+Default: `false`
+
+Indent blank lines.
 
 
 ## Related
