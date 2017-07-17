@@ -15,11 +15,6 @@ test('throw if indent is not a string', t => {
 	t.throws(() => m('foo', 1, {indent: 1}), 'Expected `options.indent` to be a `string`, got `number`');
 });
 
-test('throw if blank is not a boolean', t => {
-	t.throws(() => m('foo', 1, {blank: 1}), 'Expected `options.blank` to be a `boolean`, got `number`');
-	t.throws(() => m('foo', 1, {blank: 'false'}), 'Expected `options.blank` to be a `boolean`, got `string`');
-});
-
 test('indent each line in a string', t => {
 	t.is(m('foo\nbar'), ' foo\n bar');
 	t.is(m('foo\nbar', 1), ' foo\n bar');
@@ -30,6 +25,7 @@ test('indent each line in a string', t => {
 test('not indent whitespace only lines', t => {
 	t.is(m('foo\nbar\n', 1), ' foo\n bar\n');
 	t.is(m('foo\nbar\n', 1, {blank: false}), ' foo\n bar\n');
+	t.is(m('foo\nbar\n', 1, {blank: null}), ' foo\n bar\n');
 });
 
 test('indent every line if options.blank is true', t => {
