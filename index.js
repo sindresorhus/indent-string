@@ -1,6 +1,14 @@
 'use strict';
-module.exports = (str, count, indent) => {
-	indent = indent === undefined ? ' ' : indent;
+module.exports = (str, count, options) => {
+	if (options === undefined) {
+		options = {indent: ' ', blank: false};
+	} else if (typeof options === 'object') {
+		options.indent = options.indent === undefined ? ' ' : options.indent;
+		options.blank = options.blank === undefined ? false : options.blank;
+	} else {
+		// Support older versions: use the third parameter as options.indent
+		options = {indent: options, blank: false};
+	}
 	count = count === undefined ? 1 : count;
 
 	if (typeof str !== 'string') {
@@ -11,13 +19,23 @@ module.exports = (str, count, indent) => {
 		throw new TypeError(`Expected \`count\` to be a \`number\`, got \`${typeof count}\``);
 	}
 
-	if (typeof indent !== 'string') {
-		throw new TypeError(`Expected \`indent\` to be a \`string\`, got \`${typeof indent}\``);
+	if (typeof options !== 'object') {
+		throw new TypeError(`Expected \`options\` to be a \`string\` or an \`object\`, got \`${typeof options}\``);
+	}
+
+	if (typeof options.indent !== 'string') {
+		throw new TypeError(`Expected \`options.indent\` to be a \`string\`, got \`${typeof options.indent}\``);
+	}
+
+	if (typeof options.blank !== 'boolean') {
+		throw new TypeError(`Expected \`options.blank\` to be a \`boolean\`, got \`${typeof options.blank}\``);
 	}
 
 	if (count === 0) {
 		return str;
 	}
 
-	return str.replace(/^(?!\s*$)/mg, indent.repeat(count));
-};
+	const rx = options.blank ? /^/mg : /^(?!\s*$)/mg;
+	return str.replace(rx, options.indent.repeat(count));
+}
+;
