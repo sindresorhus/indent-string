@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (str, count, opts) => {
 	// Support older versions: use the third parameter as options.indent
+	// TODO: Remove the workaround in the next major version
 	const options = typeof opts === 'object' ? Object.assign({indent: ' '}, opts) : {indent: opts || ' '};
 	count = count === undefined ? 1 : count;
 
@@ -20,7 +21,7 @@ module.exports = (str, count, opts) => {
 		return str;
 	}
 
-	const rx = options.blank ? /^/mg : /^(?!\s*$)/mg;
-	return str.replace(rx, options.indent.repeat(count));
+	const regex = options.includeEmptyLines ? /^/mg : /^(?!\s*$)/mg;
+	return str.replace(regex, options.indent.repeat(count));
 }
 ;

@@ -1,5 +1,5 @@
 import test from 'ava';
-import m from './';
+import m from '.';
 
 test('throw if input is not a string', t => {
 	t.throws(() => m(5), 'Expected `input` to be a `string`, got `number`');
@@ -24,12 +24,12 @@ test('indent each line in a string', t => {
 
 test('not indent whitespace only lines', t => {
 	t.is(m('foo\nbar\n', 1), ' foo\n bar\n');
-	t.is(m('foo\nbar\n', 1, {blank: false}), ' foo\n bar\n');
-	t.is(m('foo\nbar\n', 1, {blank: null}), ' foo\n bar\n');
+	t.is(m('foo\nbar\n', 1, {includeEmptyLines: false}), ' foo\n bar\n');
+	t.is(m('foo\nbar\n', 1, {includeEmptyLines: null}), ' foo\n bar\n');
 });
 
 test('indent every line if options.blank is true', t => {
-	t.is(m('foo\n\nbar\n	', 1, {blank: true}), ' foo\n \n bar\n 	');
+	t.is(m('foo\n\nbar\n	', 1, {includeEmptyLines: true}), ' foo\n \n bar\n 	');
 });
 
 test('indent with leading whitespace', t => {

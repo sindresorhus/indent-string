@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save indent-string
+$ npm install indent-string
 ```
 
 
@@ -53,12 +53,12 @@ Default: `' '`
 
 String to use for the indent.
 
-##### blank
+##### includeEmptyLines
 
 Type: `boolean`<br>
 Default: `false`
 
-Indent blank lines.
+Also indent empty lines.
 
 
 ## Related
