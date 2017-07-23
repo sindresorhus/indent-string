@@ -1,6 +1,7 @@
 'use strict';
-module.exports = (str, count, indent) => {
-	indent = indent === undefined ? ' ' : indent;
+module.exports = (str, count, opts) => {
+	// Support older versions: use the third parameter as options.indent
+	const options = typeof opts === 'object' ? Object.assign({indent: ' '}, opts) : {indent: opts || ' '};
 	count = count === undefined ? 1 : count;
 
 	if (typeof str !== 'string') {
@@ -11,13 +12,15 @@ module.exports = (str, count, indent) => {
 		throw new TypeError(`Expected \`count\` to be a \`number\`, got \`${typeof count}\``);
 	}
 
-	if (typeof indent !== 'string') {
-		throw new TypeError(`Expected \`indent\` to be a \`string\`, got \`${typeof indent}\``);
+	if (typeof options.indent !== 'string') {
+		throw new TypeError(`Expected \`options.indent\` to be a \`string\`, got \`${typeof options.indent}\``);
 	}
 
 	if (count === 0) {
 		return str;
 	}
 
-	return str.replace(/^(?!\s*$)/mg, indent.repeat(count));
-};
+	const rx = options.blank ? /^/mg : /^(?!\s*$)/mg;
+	return str.replace(rx, options.indent.repeat(count));
+}
+;
