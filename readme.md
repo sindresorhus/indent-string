@@ -40,11 +40,11 @@ String you want to indent.
 Type: `number`<br>
 Default: `1`
 
-How many times you want `indent` repeated.
+How many times you want `options.indent` repeated.
 
 #### options
 
-Type: `Object`<br>
+Type: `object`<br>
 
 ##### indent
 
