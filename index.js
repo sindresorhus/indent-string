@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = (string, count = 1, options = {}) => {
-	const options = {
+module.exports = (string, count = 1, options) => {
+	options = {
 		indent: ' ',
 		includeEmptyLines: false,
 		...options
@@ -30,5 +30,6 @@ module.exports = (string, count = 1, options = {}) => {
 	}
 
 	const regex = options.includeEmptyLines ? /^/gm : /^(?!\s*$)/gm;
+
 	return string.replace(regex, options.indent.repeat(count));
 };
