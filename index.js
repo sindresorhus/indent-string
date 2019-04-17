@@ -1,7 +1,11 @@
 'use strict';
 
 module.exports = (string, count = 1, options = {}) => {
-	const options = {indent: ' ', includeEmptyLines: false, ...options};
+	const options = {
+		indent: ' ',
+		includeEmptyLines: false,
+		...options
+	};
 
 	if (typeof string !== 'string') {
 		throw new TypeError(
