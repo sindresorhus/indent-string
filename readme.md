@@ -16,24 +16,22 @@ $ npm install indent-string
 const indentString = require('indent-string');
 
 indentString('Unicorns\nRainbows', 4);
-//=> '    Unicorns'
-//=> '    Rainbows'
+//=> '    Unicorns\n    Rainbows'
 
 indentString('Unicorns\nRainbows', 4, {indent: '♥'});
-//=> '♥♥♥♥Unicorns'
-//=> '♥♥♥♥Rainbows'
+//=> '♥♥♥♥Unicorns\n♥♥♥♥Rainbows'
 ```
 
 
 ## API
 
-### indentString(input, [count], [options])
+### indentString(string, [count], [options])
 
-#### input
+#### string
 
 Type: `string`
 
-String you want to indent.
+The string to indent.
 
 #### count
 
@@ -44,14 +42,14 @@ How many times you want `options.indent` repeated.
 
 #### options
 
-Type: `object`<br>
+Type: `object`
 
 ##### indent
 
 Type: `string`<br>
 Default: `' '`
 
-String to use for the indent.
+The string to use for the indent.
 
 ##### includeEmptyLines
 

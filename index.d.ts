@@ -1,7 +1,7 @@
 declare namespace indentString {
 	interface Options {
 		/**
-		String to use for the indent.
+		The string to use for the indent.
 
 		@default ' '
 		*/
@@ -19,7 +19,7 @@ declare namespace indentString {
 /**
 Indent each line in a string.
 
-@param string - String you want to indent.
+@param string - The string to indent.
 @param count - How many times you want `options.indent` repeated. Default: `1`.
 
 @example
@@ -27,12 +27,10 @@ Indent each line in a string.
 import indentString = require('indent-string');
 
 indentString('Unicorns\nRainbows', 4);
-//=> '    Unicorns'
-//=> '    Rainbows'
+//=> '    Unicorns\n    Rainbows'
 
 indentString('Unicorns\nRainbows', 4, {indent: '♥'});
-//=> '♥♥♥♥Unicorns'
-//=> '♥♥♥♥Rainbows'
+//=> '♥♥♥♥Unicorns\n♥♥♥♥Rainbows'
 ```
 */
 declare function indentString(
