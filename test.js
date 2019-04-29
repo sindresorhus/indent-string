@@ -17,6 +17,12 @@ test('throw if count is not a number', t => {
 	}, 'Expected `count` to be a `number`, got `string`');
 });
 
+test('throw if count is a negative', t => {
+	t.throws(() => {
+		indentString('foo', -1);
+	}, 'Expected `count` to be at least 0, got `-1`');
+});
+
 test('throw if indent is not a string', t => {
 	t.throws(() => {
 		indentString('foo', 1, {indent: 1});
