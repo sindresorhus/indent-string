@@ -25,7 +25,7 @@ indentString('Unicorns\nRainbows', 4, {indent: '♥'});
 
 ## API
 
-### indentString(string, [count], [options])
+### indentString(string, count?, options?)
 
 #### string
 
@@ -65,6 +65,14 @@ Also indent empty lines.
 - [strip-indent](https://github.com/sindresorhus/strip-indent) - Strip leading whitespace from every line in a string
 
 
-## License
+---
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-indent-string?utm_source=npm-indent-string&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
