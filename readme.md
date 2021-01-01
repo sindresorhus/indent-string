@@ -1,4 +1,4 @@
-# indent-string [![Build Status](https://travis-ci.org/sindresorhus/indent-string.svg?branch=master)](https://travis-ci.org/sindresorhus/indent-string)
+# indent-string
 
 > Indent each line in a string
 
