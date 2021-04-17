@@ -1,11 +1,8 @@
-'use strict';
-
-module.exports = (string, count = 1, options) => {
-	options = {
-		indent: ' ',
-		includeEmptyLines: false,
-		...options
-	};
+export default function indentString(string, count = 1, options = {}) {
+	const {
+		indent = ' ',
+		includeEmptyLines = false
+	} = options;
 
 	if (typeof string !== 'string') {
 		throw new TypeError(
@@ -25,9 +22,9 @@ module.exports = (string, count = 1, options) => {
 		);
 	}
 
-	if (typeof options.indent !== 'string') {
+	if (typeof indent !== 'string') {
 		throw new TypeError(
-			`Expected \`options.indent\` to be a \`string\`, got \`${typeof options.indent}\``
+			`Expected \`options.indent\` to be a \`string\`, got \`${typeof indent}\``
 		);
 	}
 
@@ -35,7 +32,7 @@ module.exports = (string, count = 1, options) => {
 		return string;
 	}
 
-	const regex = options.includeEmptyLines ? /^/gm : /^(?!\s*$)/gm;
+	const regex = includeEmptyLines ? /^/gm : /^(?!\s*$)/gm;
 
-	return string.replace(regex, options.indent.repeat(count));
-};
+	return string.replace(regex, indent.repeat(count));
+}

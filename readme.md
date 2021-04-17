@@ -2,18 +2,16 @@
 
 > Indent each line in a string
 
-
 ## Install
 
 ```
 $ npm install indent-string
 ```
 
-
 ## Usage
 
 ```js
-const indentString = require('indent-string');
+import indentString from 'indent-string';
 
 indentString('Unicorns\nRainbows', 4);
 //=> '    Unicorns\n    Rainbows'
@@ -21,7 +19,6 @@ indentString('Unicorns\nRainbows', 4);
 indentString('Unicorns\nRainbows', 4, {indent: '♥'});
 //=> '♥♥♥♥Unicorns\n♥♥♥♥Rainbows'
 ```
-
 
 ## API
 
@@ -35,7 +32,7 @@ The string to indent.
 
 #### count
 
-Type: `number`<br>
+Type: `number`\
 Default: `1`
 
 How many times you want `options.indent` repeated.
@@ -46,24 +43,22 @@ Type: `object`
 
 ##### indent
 
-Type: `string`<br>
+Type: `string`\
 Default: `' '`
 
 The string to use for the indent.
 
 ##### includeEmptyLines
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `false`
 
 Also indent empty lines.
-
 
 ## Related
 
 - [indent-string-cli](https://github.com/sindresorhus/indent-string-cli) - CLI for this module
 - [strip-indent](https://github.com/sindresorhus/strip-indent) - Strip leading whitespace from every line in a string
-
 
 ---
 

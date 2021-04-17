@@ -1,32 +1,42 @@
 import test from 'ava';
-import indentString from '.';
+import indentString from './index.js';
 
 test('throw if input is not a string', t => {
 	t.throws(() => {
 		indentString(5);
-	}, 'Expected `input` to be a `string`, got `number`');
+	}, {
+		message: 'Expected `input` to be a `string`, got `number`'
+	});
 
 	t.throws(() => {
 		indentString(true);
-	}, 'Expected `input` to be a `string`, got `boolean`');
+	}, {
+		message: 'Expected `input` to be a `string`, got `boolean`'
+	});
 });
 
 test('throw if count is not a number', t => {
 	t.throws(() => {
 		indentString('foo', 'bar');
-	}, 'Expected `count` to be a `number`, got `string`');
+	}, {
+		message: 'Expected `count` to be a `number`, got `string`'
+	});
 });
 
 test('throw if count is a negative', t => {
 	t.throws(() => {
 		indentString('foo', -1);
-	}, 'Expected `count` to be at least 0, got `-1`');
+	}, {
+		message: 'Expected `count` to be at least 0, got `-1`'
+	});
 });
 
 test('throw if indent is not a string', t => {
 	t.throws(() => {
 		indentString('foo', 1, {indent: 1});
-	}, 'Expected `options.indent` to be a `string`, got `number`');
+	}, {
+		message: 'Expected `options.indent` to be a `string`, got `number`'
+	});
 });
 
 test('indent each line in a string', t => {

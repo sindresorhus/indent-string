@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import indentString = require('.');
+import indentString from './index.js';
 
 expectType<string>(indentString('Unicorns\nRainbows'));
 expectType<string>(indentString('Unicorns\nRainbows', 4));
