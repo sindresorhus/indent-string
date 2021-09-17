@@ -59,6 +59,7 @@ Also indent empty lines.
 
 - [indent-string-cli](https://github.com/sindresorhus/indent-string-cli) - CLI for this module
 - [strip-indent](https://github.com/sindresorhus/strip-indent) - Strip leading whitespace from every line in a string
+- [redent](https://github.com/sindresorhus/redent) - Strip redundant indentation and indent the string
 
 ---
 
