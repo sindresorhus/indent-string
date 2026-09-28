@@ -1,4 +1,4 @@
-export interface Options {
+export type Options = {
 	/**
 	The string to use for the indent.
 
@@ -12,7 +12,7 @@ export interface Options {
 	@default false
 	*/
 	readonly includeEmptyLines?: boolean;
-}
+};
 
 /**
 Indent each line in a string.
@@ -34,5 +34,5 @@ indentString('Unicorns\nRainbows', 4, {indent: '♥'});
 export default function indentString(
 	string: string,
 	count?: number,
-	options?: Options
+	options?: Options,
 ): string;
