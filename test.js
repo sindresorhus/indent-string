@@ -106,6 +106,14 @@ test('indents empty lines when `includeEmptyLines` is true', () => {
 	assert.equal(indentString('\n', 1, {includeEmptyLines: true}), ' \n ');
 });
 
+test('keeps CRLF intact when `includeEmptyLines` is true', () => {
+	assert.equal(indentString('foo\r\nbar', 1, {includeEmptyLines: true}), ' foo\r\n bar');
+	assert.equal(indentString('foo\r\n\r\nbar\r\n', 1, {includeEmptyLines: true}), ' foo\r\n \r\n bar\r\n ');
+	assert.equal(indentString('\r\n', 1, {includeEmptyLines: true}), ' \r\n ');
+	// A lone CR is still a line separator.
+	assert.equal(indentString('foo\rbar', 1, {includeEmptyLines: true}), ' foo\r bar');
+});
+
 test('keeps leading whitespace and adds to it', () => {
 	assert.equal(indentString(' foo\n bar\n', 1), '  foo\n  bar\n');
 	assert.equal(indentString('\tfoo', 1), ' \tfoo');

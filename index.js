@@ -32,7 +32,9 @@ export default function indentString(string, count = 1, options = {}) {
 		return string;
 	}
 
-	const regex = includeEmptyLines ? /^/gmv : /^(?!\s*$)/gmv;
+	// With `includeEmptyLines`, skip the position between the `\r` and `\n` of a CRLF.
+	// Without it, skip whitespace-only lines. The lookahead must not cross a line break, or a run of blank lines takes quadratic time.
+	const regex = includeEmptyLines ? /^(?!(?<=\r)\n)/gmv : /^(?![\s--[\n\r\u{2028}\u{2029}]]*$)/gmv;
 
 	// The indent is a replacement string, so a `$` sequence in it expands as a pattern instead
 	// of being inserted literally. That is the published behavior, so it stays.
